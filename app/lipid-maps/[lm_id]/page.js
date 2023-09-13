@@ -97,7 +97,7 @@ export default function LipidMapsID ( { params } ) {
         <p className="text-2xl">Molecules with similar weight</p>
       <div className="flex flex-row items-center justify-around gap-4">
       {new_weight.map(lipid=> {
-        return <div className="col-span-1 border p-5 bg-white">
+        return <div key={lipid.lm_id} className="col-span-1 border p-5 bg-white">
                 <Link href={`${lipid.lm_id}`}>
           
           <p className="text-sm bold">{lipid.name}</p>
