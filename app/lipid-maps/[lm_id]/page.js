@@ -55,7 +55,7 @@ export default function LipidMapsID ( { params } ) {
       <div className="flex flex-col items-center m-15">
         <p className="text-3xl justify-center"> {new_lipid.name} </p>
         <p className="text-2xl justify-center"> {new_lipid.sys_name} </p>
-        <ChemicalFormula formula = {new_lipid.formula} /> 
+        {new_lipid.formula ? <ChemicalFormula formula = {new_lipid.formula} /> : null } 
       </div>
       <div className="flex flex-row items-center justify-center gap-4 m-5">
       <img
@@ -68,7 +68,7 @@ export default function LipidMapsID ( { params } ) {
     <div className="flex-col">
       <div className="info-item flex justify-between items-center mb-4">
         <span className="text-sm">Mass:</span>
-        <span className="text-xl">{new_lipid.exactmass}</span>
+        <span className="text-xl">{new_lipid.exactmass ? new_lipid.exactmass : null}</span>
       </div>
       <div className="info-item flex justify-between items-center mb-4">
         <span className="text-sm">Inchi key:</span>
@@ -102,7 +102,7 @@ export default function LipidMapsID ( { params } ) {
           
           <p className="text-sm bold">{lipid.name}</p>
           <p>{lipid.exactmass}</p>
-          <ChemicalFormula formula = {lipid.formula} /> 
+          {lipid.formula ?<ChemicalFormula formula = {lipid.formula} /> : null}
           <Image
               priority
               src={`/lmsd_images/${lipid.lm_id}.png`}
